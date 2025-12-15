@@ -186,7 +186,6 @@ onMounted(async () => {
                 </tr>
             </thead>
             <tbody>
-
                 <BaseTableRow v-for="row in rows" :key="row.id" @request-update="update" @request-deletion="filter"
                     :id="row.id" :name="row.name" :rating="row.rating" :is-dubbed="row.isDubbed" />
             </tbody>
@@ -195,23 +194,29 @@ onMounted(async () => {
                     <td colspan="4" class="text-2xl border-t">New favorite</td>
                 </tr>
                 <tr>
-                    <td><label for="title_add">Title</label></td>
-                    <td><label for="rating_add">Rating</label></td>
-                    <td><label for="isDubbed_add">Dubbed</label></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <textarea name="title" id="title_add" placeholder="A title..." v-model="localName" class="p-1.5 border"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="rating" id="rating_add" min="1" max="10" v-model="localRating" />
-                    </td>
-                    <td>
-                        <input type="checkbox" name="isDubbed" id="isDubbed_add" v-model="localIsDubbed" />
-                    </td>
-                    <td>
-                        <BaseButton :text="addButtonText" @btn-click="postNewTitle" class="p-2 bg-green-300 rounded-2xl" />
+                    <td colspan="4">
+                        <form class="flex flex-wrap gap-10">
+                            <label class="flex flex-col flex-1 max-w-120">
+                                <span>Title</span>
+                                <textarea name="title" id="title_add" placeholder="A title..." v-model="localName"
+                                    class="p-1.5 border"></textarea>
+                            </label>
+                            <div class="w-full flex flex-row gap-10">
+                                <label class="flex flex-col flex-1 max-w-20 h-fit">
+                                    <span>Rating</span>
+                                    <input type="number" name="rating" id="rating_add" min="1" max="10"
+                                        v-model="localRating" />
+                                </label>
+                                <label class="flex flex-row gap-x-2 flex-1 max-w-20 h-fit self-center">
+                                    <span>Dubbed</span>
+                                    <input type="checkbox" name="isDubbed" id="isDubbed_add" v-model="localIsDubbed" />
+                                </label>
+                            </div>
+                            <div class="w-full">
+                                <BaseButton :text="addButtonText" @btn-click="postNewTitle"
+                                    class="ps-5 pt-2 pe-5 pb-2 bg-green-300 rounded-2xl" />
+                            </div>
+                        </form>
                     </td>
                 </tr>
             </tfoot>
@@ -235,6 +240,7 @@ onMounted(async () => {
     input {
         @apply text-center;
     }
+
     input[type="number"] {
         @apply ps-3 border;
     }
