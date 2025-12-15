@@ -14,13 +14,13 @@ let state = ref(false);
         <div class="absolute md:relative w-[inherit] max-w-[inherit] md:border-2 md:rounded-2xl">
             <ul>
                 <li>
-                    <RouterLink active-class="underline font-bold" to="/">Startsidan</RouterLink>
+                    <RouterLink active-class="underline font-bold" to="/">Start</RouterLink>
                 </li>
                 <li>
-                    <RouterLink active-class="underline font-bold" to="/anime">Anime favoriter</RouterLink>
+                    <RouterLink active-class="underline font-bold" to="/anime">Favorite Anime</RouterLink>
                 </li>
                 <li>
-                    <RouterLink active-class="underline font-bold" to="/evaluation">Utvärdering</RouterLink>
+                    <RouterLink active-class="underline font-bold" to="/evaluation">Vue.js</RouterLink>
                 </li>
             </ul>
         </div>

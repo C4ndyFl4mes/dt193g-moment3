@@ -5,11 +5,13 @@
 </script>
 
 <template>
+  <div class="flex flex-col min-h-screen">
   <Header />
-  <main class="container mx-auto">
+  <main class="container mx-auto flex-1">
     <RouterView />
   </main>
   <Footer />
+  </div>
 </template>
 
 <style scoped></style>
